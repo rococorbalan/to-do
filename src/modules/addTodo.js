@@ -1,4 +1,6 @@
 // addTodo.js
+import { display } from "./displayController";
+
 class ToDo {
     constructor(title, description, deadline) {
         this.title = title;
@@ -10,10 +12,8 @@ class ToDo {
     addToProject(project) {
         project.push(this);
     }
-
-    display(){
-        console.log(this)
-    }
-    
 }
+
+
+
 export { ToDo };
