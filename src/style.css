@@ -1,3 +1,7 @@
 * {
     background-color: rebeccapurple;
 }
+
+.done{
+    text-decoration: line-through;
+}

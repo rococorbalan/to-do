@@ -2,6 +2,7 @@
 import "./style.css";
 import { ToDo } from "./modules/addTodo";
 import { display, makeTodoElement } from "./modules/displayController";
+import { doneButtonController } from "./modules/doneButtonController";
 
 const form = document.getElementById("add-form");
 const titleInput = document.getElementById("title")
@@ -24,6 +25,7 @@ addButton.addEventListener("click", (event) => {
     currentProjectElements.push(todoElement);
 
     display(todoElement, container);
+    doneButtonController(currentProject);
 
     form.reset();
 })
