@@ -32,4 +32,10 @@ function display(element, container) {
     container.appendChild(element);
 }
 
-export { display, makeTodoElement };
+function displayProject(elements, container) {
+    elements.forEach(element => {
+        container.appendChild(element);
+    });
+}
+
+export { display, makeTodoElement, displayProject };

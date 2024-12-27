@@ -1,7 +1,7 @@
 // index.js
 import "./style.css";
 import { ToDo } from "./modules/addTodo";
-import { display, makeTodoElement } from "./modules/displayController";
+import { display, makeTodoElement, displayProject } from "./modules/displayController";
 import { doneButtonController } from "./modules/doneButtonController";
 import { Project } from "./modules/projectHandler";
 
