@@ -18,7 +18,6 @@ function doneButtonController(project){
 
 function doneButtonEvent(event, todo) {
     todo.done = event.currentTarget.checked;
-    console.log(todo)
 
     if(event.currentTarget.checked){
         (event.currentTarget.parentNode).classList.remove("not-done");

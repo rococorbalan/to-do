@@ -8,10 +8,6 @@ class ToDo {
         this.deadline = deadline;
         this.done = false;
     }
-
-    addToProject(project) {
-        project.push(this);
-    }
 }
 
 

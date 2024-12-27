@@ -3,6 +3,7 @@ import "./style.css";
 import { ToDo } from "./modules/addTodo";
 import { display, makeTodoElement } from "./modules/displayController";
 import { doneButtonController } from "./modules/doneButtonController";
+import { Project } from "./modules/projectHandler";
 
 const form = document.getElementById("add-form");
 const titleInput = document.getElementById("title")
@@ -12,8 +13,12 @@ const addButton = document.getElementById("save");
 
 const container = document.getElementById("container")
 
-let currentProject = [];
-let currentProjectElements = [];
+let projects = [];
+
+let defaultProject = new Project("default");
+projects.unshift(defaultProject);
+
+let currentProject = defaultProject;
 
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -21,8 +26,8 @@ addButton.addEventListener("click", (event) => {
     let todo = new ToDo(titleInput.value, descriptionInput.value, deadlineInput.value);
     let todoElement = makeTodoElement(todo);
 
-    todo.addToProject(currentProject);
-    currentProjectElements.push(todoElement);
+    currentProject.addTask(todo, todoElement);
+    console.log(defaultProject, projects)
 
     display(todoElement, container);
     doneButtonController(currentProject);
