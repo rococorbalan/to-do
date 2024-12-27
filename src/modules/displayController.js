@@ -34,8 +34,18 @@ function display(element, container) {
 
 function displayProject(elements, container) {
     elements.forEach(element => {
-        container.appendChild(element);
+        container.appendChild(element); 
     });
 }
 
-export { display, makeTodoElement, displayProject };
+function addProjectsValues(projects, select) {
+    projects.forEach(project => {
+        let option = document.createElement("option");
+        option.value = project.name;
+        option.text = project.name;
+
+        select.add(option, 0);
+    })
+}
+
+export { display, makeTodoElement, displayProject, addProjectsValues };
