@@ -33,6 +33,7 @@ function display(element, container) {
 }
 
 function displayProject(elements, container) {
+    container.innerHTML = "";
     elements.forEach(element => {
         container.appendChild(element); 
     });

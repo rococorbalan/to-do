@@ -23,6 +23,7 @@ let currentProject = defaultProject;
 addProjectValue(defaultProject, projectSelector);
 
 projectSelector.value = projectSelector.options[0].value;
+displayProject(defaultProject.tasksElements, container);
 
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -31,10 +32,17 @@ addButton.addEventListener("click", (event) => {
     let todoElement = makeTodoElement(todo);
 
     currentProject.addTask(todo, todoElement);
-    console.log(defaultProject, projects)
 
     display(todoElement, container);
     doneButtonController(currentProject);
 
     form.reset();
+})
+
+projectSelector.addEventListener("change", (event) => {
+    if(projectSelector.value !== "new"){
+        let selectedProject = projects.find(project => project.name === projectSelector.value);
+        currentProject = selectedProject;
+        displayProject(currentProject.tasksElements, container)
+    }
 })
