@@ -1,9 +1,9 @@
 // index.js
 import "./style.css";
 import { ToDo } from "./modules/addTodo";
-import { display, makeTodoElement, displayProject, addProjectsValues } from "./modules/displayController";
+import { display, makeTodoElement, displayProject, addProjectValue } from "./modules/displayController";
 import { doneButtonController } from "./modules/doneButtonController";
-import { Project } from "./modules/projectHandler";
+import { Project, projects } from "./modules/projectHandler";
 
 const form = document.getElementById("add-form");
 const titleInput = document.getElementById("title")
@@ -15,14 +15,14 @@ const projectSelector = document.getElementById("projects")
 
 const container = document.getElementById("container")
 
-let projects = [];
-
 let defaultProject = new Project("default");
 projects.unshift(defaultProject);
 
 let currentProject = defaultProject;
 
-addProjectsValues(projects, projectSelector);
+addProjectValue(defaultProject, projectSelector);
+
+projectSelector.value = projectSelector.options[0].value;
 
 addButton.addEventListener("click", (event) => {
     event.preventDefault();

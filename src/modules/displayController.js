@@ -38,14 +38,12 @@ function displayProject(elements, container) {
     });
 }
 
-function addProjectsValues(projects, select) {
-    projects.forEach(project => {
-        let option = document.createElement("option");
-        option.value = project.name;
-        option.text = project.name;
+function addProjectValue(project, select) {
+    let option = document.createElement("option");
+    option.value = project.name;
+    option.text = project.name;
 
-        select.add(option, 0);
-    })
+    select.add(option, 0);
 }
 
-export { display, makeTodoElement, displayProject, addProjectsValues };
+export { display, makeTodoElement, displayProject, addProjectValue };
