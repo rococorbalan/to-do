@@ -1,4 +1,6 @@
 // displayController.js
+const container = document.getElementById("container")
+
 function makeTodoElement (object) {
     const todoElement = document.createElement("div");
     todoElement.classList.add("todo-element");
@@ -32,7 +34,7 @@ function display(element, container) {
     container.appendChild(element);
 }
 
-function displayProject(elements, container) {
+function displayProject(elements) {
     container.innerHTML = "";
     elements.forEach(element => {
         container.appendChild(element); 

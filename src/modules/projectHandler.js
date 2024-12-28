@@ -1,5 +1,5 @@
 // projectHandler.js
-import { addProjectValue } from "./displayController";
+import { addProjectValue, displayProject } from "./displayController";
 
 const projectSelector = document.getElementById("projects")
 const dialog = document.getElementById("add-project-dialog")
@@ -10,6 +10,10 @@ const addProject = document.getElementById("add-project-btn")
 
 let newProject;
 let projects = []
+
+let currentProject;
+const getCurrentProject = () => currentProject;
+const setCurrentProject = (project) => currentProject = project;
 
 class Project {
     constructor(name){
@@ -40,9 +44,12 @@ addProject.addEventListener("click", (event) => {
         projects.unshift(newProject);
         addProjectValue(newProject, projectSelector);
         projectSelector.value = projectSelector.options[0].value;
+        displayProject(newProject.tasksElements);
+
+        setCurrentProject(newProject)
     }   
 })
 
 const getNewProject = () => newProject;
 
-export { Project, getNewProject, projects}
+export { Project, getNewProject, projects, setCurrentProject, getCurrentProject}
