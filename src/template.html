@@ -6,6 +6,10 @@
     <title>To-Do</title>
 </head>
 <body>
+    <div id="header">
+        <h1>To-Do-So</h1>
+    </div>
+
     <form action="post" id="add-form">
         <fieldset>
             <input type="text" name="title" id="title">
@@ -19,26 +23,25 @@
         <button id="save">Save</button>
     </form>
 
+    
     <div id="project-selector">
         <select name="projects" id="projects">
             <option value="new" id="new-project">New</option>
         </select>
     </div>
 
-    <div class="dialog-container">
-        <dialog id="add-project-dialog">
-            <div class="dialog-header">
-                <h1 class="dialog-title">New Project</h1>
-                <button class="dialog-close">&times;</button>
-            </div>
-            <form action="post" id="add-project">
-                <input type="text" placeholder="Project Name" id="new-project-title">
-                <button id="add-project-btn">Add Project</button>
-            </form>
-        </dialog>
-    </div>
-
     <div id="container"></div>
+
+    <dialog id="add-project-dialog" style="padding: 0; border: 0;">
+        <div class="dialog-header">
+            <h1 class="dialog-title">New Project</h1>
+            <button class="dialog-close">&times;</button>
+        </div>
+        <form action="post" id="add-project">
+            <input type="text" placeholder="Project Name" id="new-project-title">
+            <button id="add-project-btn">Add Project</button>
+        </form>
+    </dialog>
 
 </body>
 </html>

@@ -34,6 +34,12 @@ projectSelector.addEventListener("change", (event) => {
     }
 })
 
+dialog.addEventListener("click", (event) =>  {
+    if(event.target === dialog){
+        dialog.close();
+    }
+})
+
 addProject.addEventListener("click", (event) => {
     event.preventDefault();
     if(addProjectTitle.value.length !== 0){
