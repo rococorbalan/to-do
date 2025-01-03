@@ -6,7 +6,7 @@ html,body {
 body {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
 #header {
@@ -17,14 +17,14 @@ body {
 }
 
 #project-selector {
-    grid-row: 2 / 6;
+    grid-row: 2 / 7;
     grid-column: 1 / 2;
 
     background-color: antiquewhite;
 }
 
 #container {
-    grid-row: 3 / 6;
+    grid-row: 3 / 7;
     grid-column: 2 / 7;
 
     align-self: baseline;
@@ -43,4 +43,8 @@ body {
 dialog::backdrop {
     background-color: black;
     opacity: .5;
+}
+
+#header {
+    text-align: right
 }
