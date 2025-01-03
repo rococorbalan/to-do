@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Pacifico&display=swap');
+
+:root {
+    --main-green: #1ff400;
+    --main-blue: #00d4ff;
+}
+
 html,body {
     margin: 0;
     height: 100%;
@@ -13,7 +20,10 @@ body {
     grid-row: 1 / 2;
     grid-column: 1 / 7;
 
-    background-color: lavender;
+    background-color: #daffc7;
+    
+    text-align: right;
+    padding-right: 50px;
 }
 
 #project-selector {
@@ -28,12 +38,16 @@ body {
     grid-column: 2 / 7;
 
     align-self: baseline;
+
+    padding-right: 50px;
 }
 
 #add-form {
     grid-row: 2 / 3;
     grid-column: 2 / 7;
     height: min-content;
+
+    padding-right: 50px;
 }
 
 .done {
@@ -45,6 +59,26 @@ dialog::backdrop {
     opacity: .5;
 }
 
-#header {
-    text-align: right
+#header span:nth-of-type(1), #header span:nth-of-type(5) {
+    font-family: "Lexend", 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    
+}
+
+#header span:nth-of-type(3){
+    font-family: "Pacifico", 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+}
+
+#header span:nth-of-type(2), #header span:nth-of-type(4){
+    display: inline-block;
+    font-family: "Lexend", 'Times New Roman', Times, serif;
+}
+
+#header span:nth-of-type(2){
+    color: var(--main-green);
+}
+
+#header span:nth-of-type(4){
+    color: var(--main-blue);
 }
