@@ -161,3 +161,29 @@ dialog::backdrop {
     display: block;
     opacity: 1;
 }
+
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#new {
+    margin: 20px 0;
+    width: 90%;
+    height: 40px;
+
+    border: none;
+    font-family: "Lexend", 'Times New Roman', Times, serif;
+    font-size: 1rem;
+
+    background-color: rgba(31,244,0,1);
+    background: linear-gradient(90deg, rgba(31,244,0,0.5) 0%, rgba(0,212,255,0.5) 100%);
+    border-radius: 15px;
+
+    transition: all 0.3s ease;
+}
+
+#new:hover {
+    transform: scale(1.1);
+}
