@@ -1,5 +1,13 @@
+import { projects, setCurrentProject } from "./projectHandler";
+
 // displayController.js
 const container = document.getElementById("container")
+const menu = document.querySelector(".menu")
+const select = document.querySelector(".select");
+const caret = document.querySelector(".caret");
+const selected = document.querySelector(".selected")
+const options = menu.children;
+
 
 function makeTodoElement (object) {
     const todoElement = document.createElement("div");
@@ -41,12 +49,25 @@ function displayProject(elements) {
     });
 }
 
-function addProjectValue(project, select) {
-    let option = document.createElement("option");
-    option.value = project.name;
-    option.text = project.name;
+function addProjectValue(project) {
+    let newProject = document.createElement("li");
+    newProject.classList.add("project")
+    newProject.addEventListener("click", () => {
+        selected.textContent = project.name;
 
-    select.add(option, 0);
+        select.classList.remove("select-clicked");
+        caret.classList.remove("caret-rotate");
+        menu.classList.remove("menu-open");
+
+        for(const opt of options) {
+            opt.classList.remove("active");
+        }
+
+        newProject.classList.add("active");
+    })
+    menu.appendChild(newProject);
+    newProject.textContent = project.name; 
+    setCurrentProject(project);
 }
 
 export { display, makeTodoElement, displayProject, addProjectValue };

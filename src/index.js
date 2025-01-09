@@ -11,17 +11,10 @@ const descriptionInput = document.getElementById("description");
 const deadlineInput = document.getElementById("deadline")
 const addButton = document.getElementById("save");
 
-const projectSelector = document.getElementById("projects")
+let defaultProject = new Project("default")
 
-let defaultProject = new Project("default");
 projects.unshift(defaultProject);
-
-setCurrentProject(defaultProject);
-
-addProjectValue(defaultProject, projectSelector);
-
-projectSelector.value = projectSelector.options[0].value;
-displayProject(defaultProject.tasksElements);
+addProjectValue(defaultProject);
 
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -37,10 +30,3 @@ addButton.addEventListener("click", (event) => {
     form.reset();
 })
 
-projectSelector.addEventListener("change", (event) => {
-    if(projectSelector.value !== "new"){
-        let selectedProject = projects.find(project => project.name === projectSelector.value);
-        setCurrentProject(selectedProject);
-        displayProject((getCurrentProject()).tasksElements)
-    }
-})

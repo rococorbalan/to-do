@@ -24,11 +24,18 @@
     </form>
 
     
-    <div id="project-selector">
-        <select name="projects" id="projects">
-            <option value="new" id="new-project">New</option>
-        </select>
+    <div id="dropdown">
+        <div class="select">
+            <span class="selected">Work</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu">
+            <li class="project">Study</li>
+            <li class="active project">Work</li>
+            <li class="project">Something</li>
+        </ul>
     </div>
+    <button id="new">New</button>
 
     <div id="container"></div>
 

@@ -10,6 +10,4 @@ class ToDo {
     }
 }
 
-
-
 export { ToDo };
