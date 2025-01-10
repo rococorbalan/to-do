@@ -27,6 +27,9 @@ function makeTodoElement (object) {
 
     const todoDone = document.createElement("input");
     todoDone.type = "checkbox";
+    todoDone.addEventListener("change", (event) => {
+        event.target.parentElement.classList.toggle("done");
+    })
     todoDone.classList.add("todo-done");
 
     todoElement.appendChild(todoTitle);
