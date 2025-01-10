@@ -13,13 +13,22 @@
     <div id="add-form-container">
         <form action="post" id="add-form">
             <fieldset>
-                <input type="text" name="title" id="title">
+                <label for="title">New Task</label>
+                <input type="text" name="title" id="title" placeholder="Task title">
             </fieldset>
             <fieldset class="hidden">
-                <textarea name="description" id="description"></textarea>
-                <input type="date" name="deadline" id="deadline">
-                <button id="save">Save</button>
-                <button id="close-button">&times;</button>
+                <div class="description-container">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" placeholder="Task Description"></textarea>
+                </div>
+                <div class="deadline-container">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" name="deadline" id="deadline">
+                </div>
+                <div class="buttons-container">
+                    <button id="save">Save</button>
+                    <button id="close-button">&times;</button>
+                </div>
             </fieldset>
         </form> 
     </div>

@@ -8,17 +8,17 @@ const hiddenInputs = document.querySelector(".hidden");
 
 function loadDropdownInput () {
     titleInput.addEventListener("focus", () => {
-        hiddenInputs.classList.add("menu-open");
+        hiddenInputs.classList.add("input-open");
     })
 
     closeButton.addEventListener("click", (event) => {
         event.preventDefault();
         addForm.reset(); 
-        hiddenInputs.classList.remove("menu-open");
+        hiddenInputs.classList.remove("input-open");
     })
     
     saveButton.addEventListener("click", () => {
-        hiddenInputs.classList.remove("menu-open");
+        hiddenInputs.classList.remove("input-open");
     })
 }
 

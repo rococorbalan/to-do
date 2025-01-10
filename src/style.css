@@ -5,6 +5,10 @@
     --main-blue: #00d4ff;
 }
 
+* {
+    font-family: "Lexend", 'Times New Roman', Times, serif;
+}
+
 html,body {
     margin: 0;
     height: 100%;
@@ -36,6 +40,7 @@ body {
     overflow: hidden;
 
     background-color: #f7fff4;
+    border-right: 1px solid #ccc;
 }
 
 #container {
@@ -51,6 +56,13 @@ body {
     grid-row: 2 / 3;
     grid-column: 2 / 6;
     height: min-content;
+    background-color: #f7fff4;
+    padding-right: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .done {
@@ -194,15 +206,57 @@ fieldset {
     padding: 0;
 }
 
+#add-form {
+    width: 100%;
+}
+
 #title {
     box-sizing: border-box;
-    width: 60%;
+    width: 90%;
     border: 2px solid #ccc;
     border-radius: 15px;
+    margin-left: 10px;
 }
 
 .hidden {
     opacity: 0;
     display: none;
     z-index: 1;
+}
+
+.input-open {
+    display: flex;
+    opacity: 1;
+    justify-content: space-evenly;
+}
+
+.deadline-container, .description-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-container button {
+    height: 35px;
+    width: 60px;
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: #f7fff4;
+    border: 2px solid #ccc;
+
+    transition: all 0.3s ease;
+}
+
+.buttons-container button:hover {
+    background-color: #e6eee4;
+}
+
+#description {
+    font-size: 0.8rem;
 }
