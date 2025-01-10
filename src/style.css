@@ -211,6 +211,7 @@ fieldset {
 }
 
 #title {
+    padding: 5px;
     box-sizing: border-box;
     width: 90%;
     border: 2px solid #ccc;
@@ -240,7 +241,7 @@ fieldset {
     flex-direction: column;
 }
 
-.buttons-container button {
+.buttons-container button, #add-project button {
     height: 35px;
     width: 60px;
 
@@ -253,10 +254,47 @@ fieldset {
     transition: all 0.3s ease;
 }
 
-.buttons-container button:hover {
+.buttons-container button:hover, #add-project button:hover{
     background-color: #e6eee4;
 }
 
 #description {
     font-size: 0.8rem;
+}
+
+#add-project-dialog {
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, rgba(31,244,0,1) 0%, rgba(0,212,255,1) 100%) 1;
+    width: 400px;
+}
+
+.dialog-header {
+    margin: 15px 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    height: 60px;
+
+    border-bottom: 1px solid #ccc;
+}
+
+.dialog-header button {
+    cursor: pointer;
+    align-self: center;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+}
+
+#add-project {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#add-project input{
+    border: 2px solid #ccc;
+    border-radius: 15px;
 }
