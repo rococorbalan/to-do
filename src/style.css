@@ -47,7 +47,7 @@ body {
     padding-right: 50px;
 }
 
-#add-form {
+#add-form-container {
     grid-row: 2 / 3;
     grid-column: 2 / 6;
     height: min-content;
@@ -158,8 +158,8 @@ dialog::backdrop {
 }
 
 .menu-open {
-    display: block;
-    opacity: 1;
+    display: block !important;
+    opacity: 1 !important;
 }
 
 .btn-container{
@@ -186,4 +186,23 @@ dialog::backdrop {
 
 #new:hover {
     transform: scale(1.1);
+}
+
+fieldset {
+    border: none;
+    margin: 15px;
+    padding: 0;
+}
+
+#title {
+    box-sizing: border-box;
+    width: 60%;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+}
+
+.hidden {
+    opacity: 0;
+    display: none;
+    z-index: 1;
 }

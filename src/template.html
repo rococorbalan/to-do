@@ -10,29 +10,27 @@
         <h1><span>to</span><span>-</span><span>do</span><span>-</span><span>so</span></h1>
     </div>
 
-    <form action="post" id="add-form">
-        <fieldset>
-            <input type="text" name="title" id="title">
-        </fieldset>
-        <fieldset>
-            <textarea name="description" id="description"></textarea>
-        </fieldset>
-        <fieldset>
-            <input type="date" name="deadline" id="deadline">
-        </fieldset>
-        <button id="save">Save</button>
-    </form>
+    <div id="add-form-container">
+        <form action="post" id="add-form">
+            <fieldset>
+                <input type="text" name="title" id="title">
+            </fieldset>
+            <fieldset class="hidden">
+                <textarea name="description" id="description"></textarea>
+                <input type="date" name="deadline" id="deadline">
+                <button id="save">Save</button>
+                <button id="close-button">&times;</button>
+            </fieldset>
+        </form> 
+    </div>
 
     <div id="sidebar">
         <div id="dropdown">
             <div class="select">
-                <span class="selected">Work</span>
+                <span class="selected"></span>
                 <div class="caret"></div>
             </div>
             <ul class="menu">
-                <li class="project">Study</li>
-                <li class="active project">Work</li>
-                <li class="project">Something</li>
             </ul>
         </div>
         <div class="btn-container">

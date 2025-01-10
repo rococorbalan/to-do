@@ -4,6 +4,7 @@ import { ToDo } from "./modules/addTodo";
 import { display, makeTodoElement, displayProject, addProjectValue } from "./modules/displayController";
 import { doneButtonController } from "./modules/doneButtonController";
 import { Project, projects, getCurrentProject, setCurrentProject } from "./modules/projectHandler";
+import { loadDropdownInput } from "./modules/formDropdown";
 
 const form = document.getElementById("add-form");
 const titleInput = document.getElementById("title")
@@ -11,10 +12,22 @@ const descriptionInput = document.getElementById("description");
 const deadlineInput = document.getElementById("deadline")
 const addButton = document.getElementById("save");
 
-let defaultProject = new Project("default")
 
-projects.unshift(defaultProject);
-addProjectValue(defaultProject);
+loadDropdownInput();
+
+// Defaults
+let workProject = new Project("Work");
+projects.unshift(workProject);
+addProjectValue(workProject);
+
+let schoolProject = new Project("School");
+projects.unshift(schoolProject);
+addProjectValue(schoolProject);
+
+let gamesProject = new Project("Games");
+projects.unshift(gamesProject);
+addProjectValue(gamesProject);
+
 
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -29,4 +42,3 @@ addButton.addEventListener("click", (event) => {
 
     form.reset();
 })
-
