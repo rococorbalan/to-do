@@ -42,7 +42,7 @@ function makeTodoElement (object) {
 
 
 function display(element, container) {
-    container.appendChild(element);
+    container.prepend(element);
 }
 
 function displayProject(elements) {
@@ -55,12 +55,16 @@ function displayProject(elements) {
 function addProjectValue(project) {
     let newProject = document.createElement("li");
     newProject.classList.add("project")
+    container.innerHTML = "";
     newProject.addEventListener("click", () => {
         selected.textContent = project.name;
 
         select.classList.remove("select-clicked");
         caret.classList.remove("caret-rotate");
         menu.classList.remove("menu-open");
+
+        setCurrentProject(project);
+        displayProject(project.tasksElements);
 
         for(const opt of options) {
             opt.classList.remove("active");

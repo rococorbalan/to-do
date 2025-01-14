@@ -28,15 +28,4 @@ projects.unshift(gamesProject);
 addProjectValue(gamesProject);
 
 
-addButton.addEventListener("click", (event) => {
-    event.preventDefault();
 
-    let todo = new ToDo(titleInput.value, descriptionInput.value, deadlineInput.value);
-    let todoElement = makeTodoElement(todo);
-
-    getCurrentProject().addTask(todo, todoElement);
-
-    display(todoElement, container);
-
-    form.reset();
-})
