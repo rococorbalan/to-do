@@ -215,23 +215,46 @@ fieldset {
     width: 100%;
 }
 
+#add-form fieldset:first-of-type{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #title {
     padding: 5px;
     box-sizing: border-box;
-    width: 90%;
+    flex: 1;
     border: 2px solid #ccc;
     border-radius: 15px;
-    margin-left: 10px;
 }
 
 label {
     text-shadow: 2px 1px 0 rgba(8,52,0,0.2);
 }
 
+#delete-project, #confirm-buttons button {
+    all: unset;
+    padding: 5px;
+    height: 21px;
+    background-color: red;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+#confirm-buttons img {
+    height: 21px;
+}
+
+#delete-project:hover, #confirm-buttons button:hover {
+    background-color: rgb(230, 0, 0);
+}
+
 .hidden {
-    opacity: 0;
-    display: none;
-    z-index: 1;
+    opacity: 0 !important;
+    display: none !important;
+    z-index: 1 !important;
 }
 
 .input-open {

@@ -1,4 +1,5 @@
 import { projects, setCurrentProject } from "./projectHandler";
+import deleteIcon from "../images/delete.svg";
 
 // displayController.js
 const container = document.getElementById("container")
@@ -8,6 +9,8 @@ const caret = document.querySelector(".caret");
 const selected = document.querySelector(".selected")
 const options = menu.children;
 
+const deleteImage = document.createElement("img");
+deleteImage.src = deleteIcon;
 
 function makeTodoElement (object) {
     const todoElement = document.createElement("div");
@@ -73,7 +76,8 @@ function addProjectValue(project) {
         newProject.classList.add("active");
     })
     menu.appendChild(newProject);
-    newProject.textContent = project.name; 
+    newProject.textContent = project.name;
+
     setCurrentProject(project);
 }
 

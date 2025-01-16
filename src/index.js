@@ -5,14 +5,9 @@ import { display, makeTodoElement, displayProject, addProjectValue } from "./mod
 import { Project, projects, getCurrentProject, setCurrentProject } from "./modules/projectHandler";
 import { loadDropdownInput } from "./modules/formDropdown";
 
-const form = document.getElementById("add-form");
-const titleInput = document.getElementById("title")
-const descriptionInput = document.getElementById("description");
-const deadlineInput = document.getElementById("deadline")
-const addButton = document.getElementById("save");
-
 
 loadDropdownInput();
+
 
 // Defaults
 let workProject = new Project("Work");

@@ -15,8 +15,13 @@
             <fieldset>
                 <label for="title">New Task</label>
                 <input type="text" name="title" id="title" placeholder="Task title">
+                <button id="delete-project">Delete Project</button>
+                <div id="confirm-buttons" class="hidden">
+                    <button id="confirm"><img src="./images/delete.svg" alt="delete"></button>
+                    <button id="cancel"><img src="./images/cancel.svg" alt="cancel"></button>
+                </div>
             </fieldset>
-            <fieldset class="hidden">
+            <fieldset class="hidden" id="hidden-inputs">
                 <div class="description-container">
                     <label for="description">Description</label>
                     <textarea name="description" id="description" placeholder="Task Description"></textarea>
