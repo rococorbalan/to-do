@@ -21,13 +21,13 @@ const options = menu.children;
 
 function loadDropdownInput () {
     titleInput.addEventListener("focus", () => {
-        hiddenInputs.classList.add("input-open");
+        hiddenInputs.classList.remove("hidden");
     })
 
     closeButton.addEventListener("click", (event) => {
         event.preventDefault();
         addForm.reset(); 
-        hiddenInputs.classList.remove("input-open");
+        hiddenInputs.classList.toggle("hidden");
     })
     
     saveButton.addEventListener("click", (event) => {

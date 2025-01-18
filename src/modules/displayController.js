@@ -1,5 +1,7 @@
-import { projects, setCurrentProject } from "./projectHandler";
+import { getCurrentProject, projects, setCurrentProject } from "./projectHandler";
 import deleteIcon from "../images/delete.svg";
+import deleteForever from "../images/delete-forever.svg";
+import cancel from "../images/cancel.svg";
 
 // displayController.js
 const container = document.getElementById("container")
@@ -9,10 +11,18 @@ const caret = document.querySelector(".caret");
 const selected = document.querySelector(".selected")
 const options = menu.children;
 
-const deleteImage = document.createElement("img");
-deleteImage.src = deleteIcon;
+
 
 function makeTodoElement (object) {
+    const deleteImage = document.createElement("img");
+    deleteImage.src = deleteIcon;
+    
+    const deleteForeverIcon = document.createElement("img");
+    deleteForeverIcon.src = deleteForever;
+    
+    const cancelIcon = document.createElement("img");
+    cancelIcon.src = cancel;
+
     const todoElement = document.createElement("div");
     todoElement.classList.add("todo-element");
 
@@ -35,10 +45,48 @@ function makeTodoElement (object) {
     })
     todoDone.classList.add("todo-done");
 
+    const hiddenButtons = document.createElement("div");
+    hiddenButtons.classList.add("hidden-buttons");
+    hiddenButtons.classList.add("hidden");
+
+    const confirmButton = document.createElement("button");
+    confirmButton.classList.add("confirm-button");
+    confirmButton.appendChild(deleteForeverIcon);
+    confirmButton.addEventListener("click", () => {
+        const taskElement = todoElement;
+        const taskIndex = getCurrentProject().tasksElements.indexOf(taskElement);
+
+        getCurrentProject().tasksElements.splice(taskIndex, 1);
+        getCurrentProject().tasks.splice(getCurrentProject().tasks.indexOf(object), 1);
+
+        taskElement.remove();
+    })
+
+    const cancelButton = document.createElement("button");
+    cancelButton.classList.add("cancel-button");
+    cancelButton.appendChild(cancelIcon);
+    cancelButton.addEventListener("click", () => {
+        hiddenButtons.classList.toggle("hidden")
+        deleteButton.classList.toggle("hidden")
+    })
+
+    hiddenButtons.appendChild(confirmButton);
+    hiddenButtons.appendChild(cancelButton);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("remove-task");
+    deleteButton.appendChild(deleteImage);
+    deleteButton.addEventListener("click", () => {
+        hiddenButtons.classList.toggle("hidden")
+        deleteButton.classList.toggle("hidden")
+    })
+
     todoElement.appendChild(todoTitle);
     todoElement.appendChild(todoDescription);
     todoElement.appendChild(todoDeadline);
     todoElement.appendChild(todoDone);
+    todoElement.appendChild(deleteButton);
+    todoElement.appendChild(hiddenButtons);
 
     return(todoElement);
 }
