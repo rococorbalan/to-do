@@ -9,6 +9,9 @@ import { loadDropdownInput } from "./modules/formDropdown";
 loadDropdownInput();
 
 
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('deadline').min = today;
+
 // Defaults
 let workProject = new Project("Work");
 projects.unshift(workProject);
