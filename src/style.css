@@ -362,15 +362,16 @@ h2, p {
 
 .todo-title{
     order: 2;
-    flex-grow: 2;
-    border-right: 1px solid #9f9f9f;
+    border-right: 2px solid #ccc;
     text-overflow: ellipsis;
+    padding-right: 5px;
 }
 
 .todo-description {
     order: 3;
-    flex-grow: 5;
+    flex-grow: 1;
     border-right: 2px solid #ccc;
+    padding-right: 5px;
     color: #575757;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -378,6 +379,7 @@ h2, p {
 
 .todo-deadline {
     order: 4;
+    padding-right: 5px;
     border-right: 2px solid #ccc;
 }
 

@@ -2,6 +2,7 @@ import { getCurrentProject, projects, setCurrentProject } from "./projectHandler
 import deleteIcon from "../images/delete.svg";
 import deleteForever from "../images/delete-forever.svg";
 import cancel from "../images/cancel.svg";
+import { formatDistanceToNow } from "date-fns";
 
 // displayController.js
 const container = document.getElementById("container")
@@ -36,7 +37,7 @@ function makeTodoElement (object) {
 
     const todoDeadline = document.createElement("span");
     todoDeadline.classList.add("todo-deadline");
-    todoDeadline.textContent = object.deadline;
+    todoDeadline.textContent = formatDistanceToNow(object.deadline) + " left";
 
     const todoDone = document.createElement("input");
     todoDone.type = "checkbox";

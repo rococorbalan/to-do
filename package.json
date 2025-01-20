@@ -14,6 +14,7 @@
   "author": "Roco",
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^4.1.0",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1"
   },
