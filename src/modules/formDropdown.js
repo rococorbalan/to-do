@@ -24,6 +24,10 @@ function loadDropdownInput () {
         hiddenInputs.classList.remove("hidden");
     })
 
+    titleInput.addEventListener("input", () => {
+        titleInput.classList.remove("wrong")
+    })
+
     closeButton.addEventListener("click", (event) => {
         event.preventDefault();
         addForm.reset(); 
@@ -41,6 +45,8 @@ function loadDropdownInput () {
             display(todoElement, container);
 
             addForm.reset();
+        }else {
+            titleInput.classList.add("wrong");
         }
     })
 

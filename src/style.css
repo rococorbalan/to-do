@@ -393,3 +393,7 @@ h2, p {
     height: 20px;
     width: auto;
 }
+
+.wrong {
+    border: 2px solid red !important;
+}
