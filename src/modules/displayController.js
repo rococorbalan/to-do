@@ -36,7 +36,12 @@ function makeTodoElement (object) {
 
     const todoDeadline = document.createElement("span");
     todoDeadline.classList.add("todo-deadline");
-    todoDeadline.textContent = formatDistanceToNow(object.deadline) + " left";
+    if (object.deadline !== "") {
+        todoDeadline.textContent = formatDistanceToNow(object.deadline) + " left";
+    }else {
+        todoDeadline.textContent = object.deadline
+    }
+    
 
     const todoDone = document.createElement("input");
     todoDone.type = "checkbox";
