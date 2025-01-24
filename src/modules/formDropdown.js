@@ -1,7 +1,7 @@
 // formDropdown.js
 import { ToDo } from "./addTodo";
 import { makeTodoElement, display, displayProject } from "./displayController";
-import { getCurrentProject, setCurrentProject, projects } from "./projectHandler";
+import { getCurrentProject, setCurrentProject, projects, updateLocalStorage } from "./projectHandler";
 
 const addForm = document.getElementById("add-form");
 const closeButton = document.getElementById("close-button");
@@ -71,6 +71,7 @@ function loadDropdownInput () {
         projectOption.remove();
         setCurrentProject(projects[0]);
         displayProject(getCurrentProject().tasksElements);
+        updateLocalStorage();
 
         deleteProject.classList.toggle("hidden");
         confirmButtonsContainer.classList.toggle("hidden");

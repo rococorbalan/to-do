@@ -19,7 +19,12 @@ const options = menu.children;
 const selected = dropdown.querySelector(".selected");
 
 let newProject;
-let projects = []
+let projects = [];
+
+function updateLocalStorage() {
+    const projectsJSON = JSON.stringify(projects);
+    localStorage.setItem("projects", projectsJSON);
+}
 
 let currentProject;
 const getCurrentProject = () => currentProject;
@@ -50,6 +55,7 @@ class Project {
     addTask(task, tasksElement) {
         this.tasks.push(task);
         this.tasksElements.push(tasksElement);
+        updateLocalStorage();
     }
 }
 
@@ -104,10 +110,10 @@ addProject.addEventListener("click", (event) => {
         projects.unshift(newProject);
         addProjectValue(newProject);
 
+        updateLocalStorage();
+
         setCurrentProject(newProject)
     }   
 })
 
-const getNewProject = () => newProject;
-
-export { Project, getNewProject, projects, setCurrentProject, getCurrentProject}
+export { Project, projects, setCurrentProject, getCurrentProject, updateLocalStorage}

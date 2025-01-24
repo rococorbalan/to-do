@@ -1,4 +1,4 @@
-import { getCurrentProject, projects, setCurrentProject } from "./projectHandler";
+import { getCurrentProject, projects, setCurrentProject, updateLocalStorage } from "./projectHandler";
 import deleteIcon from "../images/delete.svg";
 import deleteForever from "../images/delete-forever.svg";
 import cancel from "../images/cancel.svg";
@@ -11,7 +11,6 @@ const select = document.querySelector(".select");
 const caret = document.querySelector(".caret");
 const selected = document.querySelector(".selected")
 const options = menu.children;
-
 
 
 function makeTodoElement (object) {
@@ -43,6 +42,8 @@ function makeTodoElement (object) {
     todoDone.type = "checkbox";
     todoDone.addEventListener("change", (event) => {
         event.target.parentElement.classList.toggle("done");
+        object.done = todoDone.checked;
+        updateLocalStorage();
     })
     todoDone.classList.add("todo-done");
 
@@ -61,6 +62,7 @@ function makeTodoElement (object) {
         getCurrentProject().tasks.splice(getCurrentProject().tasks.indexOf(object), 1);
 
         taskElement.remove();
+        updateLocalStorage();
     })
 
     const cancelButton = document.createElement("button");
